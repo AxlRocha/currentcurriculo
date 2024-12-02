@@ -3,129 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axl Jhuan Moreira da Rocha - Currículo</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Axl Jhuan Moreira da Rocha</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 12pt;
+            line-height: 1.5;
+            margin: 40px auto;
+            max-width: 210mm;
+            padding: 20px;
+            background: #fff;
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 15px 0;
+            color: #34495e;
+        }
+        
+        h2 {
+            font-size: 14pt;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #bdc3c7;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 5px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2c3e50;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 3px;
+        }
+        
+        .job-period {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+        
+        .job-description {
+            margin-bottom: 20px;
+        }
+
+        .job-description p {
+            margin: 5px 0;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .job-description p:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2c3e50;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .contact-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 20mm;
+            }
+            .header {
+                border-bottom-color: #000;
+            }
+            h2 {
+                color: #000;
+                border-bottom-color: #000;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <div class="container mx-auto p-8 max-w-4xl">
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <!-- Header Section -->
-            <div class="bg-gray-800 text-white p-8">
-                <h1 class="text-4xl font-bold mb-2">Axl Jhuan Moreira da Rocha</h1>
-                <div class="flex flex-wrap gap-4 text-sm mt-4">
-                    <span class="flex items-center">
-                        <i class="fas fa-envelope mr-2"></i>
-                        axljhuan@gmail.com
-                    </span>
-                    <span class="flex items-center">
-                        <i class="fas fa-phone mr-2"></i>
-                        (41) 98501-6093
-                    </span>
-                    <span class="flex items-center">
-                        <i class="fas fa-map-marker-alt mr-2"></i>
-                        Paranaguá, PR
-                    </span>
-                    <span class="flex items-center">
-                        <i class="fas fa-birthday-cake mr-2"></i>
-                        22 anos
-                    </span>
-                </div>
-            </div>
-
-            <!-- Main Content -->
-            <div class="p-8">
-                <!-- Quote -->
-                <div class="mb-8 bg-gray-50 p-6 rounded-lg border-l-4 border-blue-600 italic">
-                    <p class="text-gray-700 text-lg">
-                        "A coragem é a primeira das qualidades humanas porque garante todas as outras"
-                    </p>
-                </div>
-
-                <!-- Profile -->
-                <section class="mb-8">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">
-                        Perfil Profissional
-                    </h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Profissional apaixonado por análise de dados e automação de processos, com forte capacidade de adaptação a novas tecnologias. Possuo experiência prática em transformar dados em insights acionáveis e automatizar processos burocráticos para maior eficiência operacional.
-                    </p>
-                </section>
-
-                <!-- Experience -->
-                <section class="mb-8">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">
-                        Experiência Profissional
-                    </h3>
-                    <div class="mb-4">
-                        <h4 class="text-xl font-semibold text-gray-800">AT Administrativo</h4>
-                        <p class="text-blue-600 font-medium">Mosaic Fertilizantes | Novembro 2024 - Presente</p>
-                        <ul class="list-disc list-inside text-gray-600 mt-2">
-                            <li>Responsável por operações na balança da empresa</li>
-                            <li>Gerenciamento de carregamento e liberação de caminhões</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-gray-800">Jovem Aprendiz</h4>
-                        <p class="text-blue-600 font-medium">Mosaic Fertilizantes | Maio 2024 - Novembro 2024</p>
-                        <ul class="list-disc list-inside text-gray-600 mt-2">
-                            <li>Desenvolvimento de aplicativos para otimização de processos</li>
-                            <li>Análise de dados setorial</li>
-                            <li>Automação de processos burocráticos</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Skills -->
-                <section class="mb-8">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">
-                        Competências Técnicas
-                    </h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Análise de Dados</h4>
-                            <ul class="list-disc list-inside text-gray-600">
-                                <li>Linguagem DAX Avançado</li>
-                                <li>Modelagem de Dados Avançado</li>
-                                <li>SQL Avançado (Cursando)</li>
-                                <li>Power Query Avançado</li>
-                                <li>Estatística para Análise de Dados</li>
-                                <li>Python para Análise de Dados (Cursando)</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="text-xl font-semibold text-gray-800 mb-2">Ferramentas</h4>
-                            <ul class="list-disc list-inside text-gray-600">
-                                <li>Excel Avançado</li>
-                                <li>Power Apps</li>
-                                <li>Mermaid (Fluxogramas)</li>
-                                <li>Power BI</li>
-                                <li>Adobe Photoshop</li>
-                                <li>Adobe Premiere Pro</li>
-                                <li>Figma (Design de Dashboards)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Languages -->
-                <section>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">
-                        Idiomas
-                    </h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="flex items-center">
-                            <span class="text-gray-800 font-medium">Inglês:</span>
-                            <span class="ml-2 text-gray-600">Avançado</span>
-                        </div>
-                        <div class="flex items-center">
-                            <span class="text-gray-800 font-medium">Russo:</span>
-                            <span class="ml-2 text-gray-600">Básico</span>
-                        </div>
-                    </div>
-                </section>
-            </div>
+<body>
+    <div class="header">
+        <h1>AXL JHUAN MOREIRA DA ROCHA</h1>
+        <div class="contact-info">
+            <span>22 anos</span> |
+            <span>Paranaguá - PR</span> |
+            <span>(41) 98501-6093</span> |
+            <span>axljhuan@gmail.com</span>
         </div>
+    </div>
+
+    <div class="section">
+        <h2>OBJETIVO PROFISSIONAL</h2>
+        <p>Atuação na área de Análise de Dados, com foco em transformação de dados em insights estratégicos e automatização de processos.</p>
+    </div>
+
+    <div class="section">
+        <h2>FORMAÇÃO ACADÊMICA E COMPLEMENTAR</h2>
+        <ul>
+            <li>Linguagem DAX - Nível Avançado</li>
+            <li>Modelagem de Dados - Nível Avançado</li>
+            <li>SQL - Nível Avançado (Em andamento)</li>
+            <li>Power Query - Nível Avançado</li>
+            <li>Estatística para Análise de Dados</li>
+            <li>Python para Análise de Dados (Em andamento)</li>
+            <li>Mermaid - Desenvolvimento de Fluxogramas</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>EXPERIÊNCIA PROFISSIONAL</h2>
+        <div class="job-title">AT Administrativo</div>
+        <div class="job-period">Mosaic Fertilizantes (Novembro/2024 - Atual)</div>
+        <div class="job-description">
+            <p>Responsável por operações na balança da empresa</p>
+            <p>Gerenciamento de carregamento e liberação de caminhões</p>
+        </div>
+
+        <div class="job-title">Jovem Aprendiz</div>
+        <div class="job-period">Mosaic Fertilizantes (Maio/2024 - Novembro/2024)</div>
+        <div class="job-description">
+            <p>Desenvolvimento de aplicativos para otimização de processos</p>
+            <p>Realização de análises de dados setoriais</p>
+            <p>Implementação de automações em processos burocráticos</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>COMPETÊNCIAS TÉCNICAS</h2>
+        <div class="skills-grid">
+            <ul>
+                <li>Microsoft Excel - Nível Avançado</li>
+                <li>Power BI e Power Apps</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Premiere Pro</li>
+                <li>Figma - Design de Dashboards</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>IDIOMAS</h2>
+        <ul>
+            <li>Inglês - Nível Avançado</li>
+            <li>Russo - Nível Básico</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>INFORMAÇÕES ADICIONAIS</h2>
+        <p>Profissional com forte capacidade de adaptação a novas tecnologias e comprometimento com aprendizado contínuo. Experiência prática em transformação de dados em insights e automatização de processos para maior eficiência operacional.</p>
     </div>
 </body>
 </html>
