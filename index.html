@@ -1,212 +1,107 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axl Jhuan Moreira da Rocha</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 12pt;
-            line-height: 1.5;
-            margin: 40px auto;
-            max-width: 210mm;
-            padding: 20px;
-            background: #fff;
-            color: #333;
-        }
+import React, { useState } from 'react';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+
+const CPFForm = () => {
+  const [nome, setNome] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [isValid, setIsValid] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const formatCPF = (value) => {
+    return value
+      .replace(/\D/g, '')
+      .replace(/(\d{3})(\d)/, '$1.$2')
+      .replace(/(\d{3})(\d)/, '$1.$2')
+      .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+      .replace(/(-\d{2})\d+?$/, '$1');
+  };
+
+  const validateCPF = (cpf) => {
+    cpf = cpf.replace(/[^\d]/g, '');
+    
+    if (cpf.length !== 11) return false;
+    
+    if (/^(\d)\1+$/.test(cpf)) return false;
+    
+    let sum = 0;
+    for (let i = 0; i < 9; i++) {
+      sum += parseInt(cpf.charAt(i)) * (10 - i);
+    }
+    
+    let remainder = (sum * 10) % 11;
+    if (remainder === 10 || remainder === 11) remainder = 0;
+    if (remainder !== parseInt(cpf.charAt(9))) return false;
+    
+    sum = 0;
+    for (let i = 0; i < 10; i++) {
+      sum += parseInt(cpf.charAt(i)) * (11 - i);
+    }
+    
+    remainder = (sum * 10) % 11;
+    if (remainder === 10 || remainder === 11) remainder = 0;
+    if (remainder !== parseInt(cpf.charAt(10))) return false;
+    
+    return true;
+  };
+
+  const handleCPFChange = (e) => {
+    const formatted = formatCPF(e.target.value);
+    setCpf(formatted);
+    setIsValid(validateCPF(formatted));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isValid && nome.length > 0) {
+      setShowAlert(true);
+      setTimeout(() => setShowAlert(false), 3000);
+    }
+  };
+
+  return (
+    <Card className="w-full max-w-md mx-auto">
+      <CardHeader>
+        <CardTitle>Cadastro de Usuário</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <Input
+              placeholder="Nome completo"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+              className="mb-4"
+            />
+            <Input
+              placeholder="CPF"
+              value={cpf}
+              onChange={handleCPFChange}
+              maxLength={14}
+              className={`${isValid ? 'border-green-500' : 'border-red-500'}`}
+            />
+          </div>
+          <Button 
+            type="submit" 
+            disabled={!isValid || nome.length === 0}
+            className="w-full"
+          >
+            Enviar
+          </Button>
+        </form>
         
-        .header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 2px solid #2c3e50;
-            margin-bottom: 30px;
-        }
+        {showAlert && (
+          <Alert className="mt-4 bg-green-100">
+            <AlertDescription>
+              Dados enviados com sucesso!
+            </AlertDescription>
+          </Alert>
+        )}
+      </CardContent>
+    </Card>
+  );
+};
 
-        .header h1 {
-            font-size: 24pt;
-            color: #2c3e50;
-            margin: 0;
-            padding: 0;
-        }
-
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 15px 0;
-            color: #34495e;
-        }
-        
-        h2 {
-            font-size: 14pt;
-            color: #2c3e50;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #bdc3c7;
-        }
-        
-        .section {
-            margin-bottom: 25px;
-            padding: 0 10px;
-        }
-        
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 5px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #2c3e50;
-        }
-        
-        .job-title, .education-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 3px;
-        }
-        
-        .job-period, .education-period {
-            font-style: italic;
-            color: #7f8c8d;
-            margin-bottom: 8px;
-        }
-        
-        .job-description {
-            margin-bottom: 20px;
-        }
-
-        .job-description p {
-            margin: 5px 0;
-            padding-left: 15px;
-            position: relative;
-        }
-
-        .job-description p:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #2c3e50;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .contact-info span {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .education-institution {
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        @media print {
-            body {
-                margin: 0;
-                padding: 20mm;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>AXL JHUAN MOREIRA DA ROCHA</h1>
-        <div class="contact-info">
-            <span>22 anos</span> |
-            <span>Paranaguá - PR</span> |
-            <span>(41) 98501-6093</span> |
-            <span>axljhuan@gmail.com</span>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>OBJETIVO PROFISSIONAL</h2>
-        <p>Atuação na área de Análise de Dados, com foco em transformação de dados em insights estratégicos e automatização de processos.</p>
-    </div>
-
-    <div class="section">
-        <h2>FORMAÇÃO ACADÊMICA</h2>
-        <div class="education-title">Inteligência de Mercado e Análise de Dados</div>
-        <div class="education-institution">Anhanguera</div>
-        <div class="education-period">Julho/2024 - Dezembro/2026 (Em andamento)</div>
-    </div>
-
-    <div class="section">
-        <h2>FORMAÇÃO COMPLEMENTAR</h2>
-        <ul>
-            <li>Linguagem DAX - Nível Avançado</li>
-            <li>Modelagem de Dados - Nível Avançado</li>
-            <li>SQL - Nível Avançado (Em andamento)</li>
-            <li>Power Query - Nível Avançado</li>
-            <li>Estatística para Análise de Dados</li>
-            <li>Python para Análise de Dados (Em andamento)</li>
-            <li>Mermaid - Desenvolvimento de Fluxogramas</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>EXPERIÊNCIA PROFISSIONAL</h2>
-        <div class="job-title">AT Administrativo</div>
-        <div class="job-period">Mosaic Fertilizantes (Novembro/2024 - Atual)</div>
-        <div class="job-description">
-            <p>Responsável por operações na balança da empresa</p>
-            <p>Gerenciamento de carregamento e liberação de caminhões</p>
-        </div>
-
-        <div class="job-title">Jovem Aprendiz</div>
-        <div class="job-period">Mosaic Fertilizantes (Maio/2024 - Novembro/2024)</div>
-        <div class="job-description">
-            <p>Desenvolvimento de aplicativos para otimização de processos</p>
-            <p>Realização de análises de dados setoriais</p>
-            <p>Implementação de automações em processos burocráticos</p>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>COMPETÊNCIAS TÉCNICAS</h2>
-        <div class="skills-grid">
-            <ul>
-                <li>Microsoft Excel - Nível Avançado</li>
-                <li>Power BI</li>
-                <li>Power Apps</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe Premiere Pro</li>
-                <li>Figma - Design de Dashboards</li>
-                <li>Apresentações dinâmicas em PowerPoint</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>IDIOMAS</h2>
-        <ul>
-            <li>Inglês - Nível Avançado</li>
-            <li>Russo - Nível Básico</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>INFORMAÇÕES ADICIONAIS</h2>
-        <p>Profissional com forte capacidade de adaptação a novas tecnologias e comprometimento com aprendizado contínuo. Experiência prática em transformação de dados em insights acionáveis e automatização de processos para maior eficiência operacional.</p>
-    </div>
-</body>
-</html>
+export default CPFForm;
