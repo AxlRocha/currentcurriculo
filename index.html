@@ -1,212 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axl Jhuan Moreira da Rocha</title>
-    <style>
-        /* Mantendo os mesmos estilos anteriores */
-        body {
-            font-family: Arial, sans-serif;
-            font-size: 12pt;
-            line-height: 1.5;
-            margin: 40px auto;
-            max-width: 210mm;
-            padding: 20px;
-            background: #fff;
-            color: #333;
-        }
-        
-        .header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 2px solid #2c3e50;
-            margin-bottom: 30px;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Axl Jhuan Moreira da Rocha</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           font-size: 12pt;
+           line-height: 1.5;
+           margin: 40px auto;
+           max-width: 210mm;
+           padding: 20px;
+           background: #fff;
+           color: #333;
+       }
+       
+       .header {
+           text-align: center;
+           padding: 20px 0;
+           border-bottom: 2px solid #2c3e50;
+           margin-bottom: 30px;
+       }
 
-        .header h1 {
-            font-size: 24pt;
-            color: #2c3e50;
-            margin: 0;
-            padding: 0;
-        }
+       .header h1 {
+           font-size: 24pt;
+           color: #2c3e50;
+           margin: 0;
+           padding: 0;
+       }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin: 15px 0;
-            color: #34495e;
-        }
-        
-        h2 {
-            font-size: 14pt;
-            color: #2c3e50;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #bdc3c7;
-        }
-        
-        .section {
-            margin-bottom: 25px;
-            padding: 0 10px;
-        }
-        
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 5px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 15px;
-        }
+       .contact-info {
+           display: flex;
+           justify-content: center;
+           flex-wrap: wrap;
+           gap: 20px;
+           margin: 15px 0;
+           color: #34495e;
+       }
+       
+       h2 {
+           font-size: 14pt;
+           color: #2c3e50;
+           margin-top: 25px;
+           margin-bottom: 15px;
+           padding-bottom: 8px;
+           border-bottom: 1px solid #bdc3c7;
+       }
+       
+       .section {
+           margin-bottom: 25px;
+           padding: 0 10px;
+       }
+       
+       ul {
+           list-style-type: none;
+           padding-left: 0;
+           margin-top: 5px;
+       }
+       
+       li {
+           margin-bottom: 8px;
+           position: relative;
+           padding-left: 15px;
+       }
 
-        li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #2c3e50;
-        }
-        
-        .job-title, .education-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 3px;
-        }
-        
-        .job-period, .education-period {
-            font-style: italic;
-            color: #7f8c8d;
-            margin-bottom: 8px;
-        }
-        
-        .job-description {
-            margin-bottom: 20px;
-        }
+       li:before {
+           content: "•";
+           position: absolute;
+           left: 0;
+           color: #2c3e50;
+       }
+       
+       .job-title, .education-title {
+           font-weight: bold;
+           color: #2c3e50;
+           margin-bottom: 3px;
+       }
+       
+       .job-period, .education-period {
+           font-style: italic;
+           color: #7f8c8d;
+           margin-bottom: 8px;
+       }
+       
+       .job-description {
+           margin-bottom: 20px;
+       }
 
-        .job-description p {
-            margin: 5px 0;
-            padding-left: 15px;
-            position: relative;
-        }
+       .job-description p {
+           margin: 5px 0;
+           padding-left: 15px;
+           position: relative;
+       }
 
-        .job-description p:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #2c3e50;
-        }
+       .job-description p:before {
+           content: "•";
+           position: absolute;
+           left: 0;
+           color: #2c3e50;
+       }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
+       .skills-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+           gap: 10px;
+           margin-top: 10px;
+       }
 
-        .contact-info span {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
+       .contact-info span {
+           display: inline-flex;
+           align-items: center;
+           gap: 5px;
+       }
 
-        .education-institution {
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
+       .education-institution {
+           color: #2c3e50;
+           margin-bottom: 15px;
+       }
 
-        @media print {
-            body {
-                margin: 0;
-                padding: 20mm;
-            }
-        }
-    </style>
+       @media print {
+           body {
+               margin: 0;
+               padding: 20mm;
+           }
+       }
+   </style>
 </head>
 <body>
-    <div class="header">
-        <h1>AXL JHUAN MOREIRA DA ROCHA</h1>
-        <div class="contact-info">
-            <span>22 anos</span> |
-            <span>Paranaguá - PR</span> |
-            <span>(41) 98501-6093</span> |
-            <span>axljhuan@gmail.com</span>
-        </div>
-    </div>
+   <div class="header">
+       <h1>AXL JHUAN MOREIRA DA ROCHA</h1>
+       <div class="contact-info">
+           <span>22 anos</span> |
+           <span>Paranagua - PR</span> |
+           <span>(41) 98501-6093</span> |
+           <span>axljhuan@gmail.com</span>
+       </div>
+   </div>
 
-    <div class="section">
-        <h2>OBJETIVO PROFISSIONAL</h2>
-        <p>Atuação na área de Análise de Dados, com foco em transformação de dados em insights estratégicos e automatização de processos.</p>
-    </div>
+   <div class="section">
+       <h2>OBJETIVO PROFISSIONAL</h2>
+       <p>Atuacao na area de Análise de Dados, com foco em transformação de dados em insights estrategicos e automatizacao de processos.</p>
+   </div>
 
-    <div class="section">
-        <h2>FORMAÇÃO ACADÊMICA</h2>
-        <div class="education-title">Inteligência de Mercado e Análise de Dados</div>
-        <div class="education-institution">Anhanguera</div>
-        <div class="education-period">Julho/2024 - Dezembro/2026 (Em andamento)</div>
-    </div>
+   <div class="section">
+       <h2>FORMAÇÃO ACADEMICA</h2>
+       <div class="education-title">Inteligência de Mercado e Análise de Dados</div>
+       <div class="education-institution">Anhanguera</div>
+       <div class="education-period">Julho/2024 - Dezembro/2026 (Em andamento)</div>
+   </div>
 
-    <div class="section">
-        <h2>FORMAÇÃO COMPLEMENTAR</h2>
-        <ul>
-            <li>Linguagem DAX - Nível Avançado</li>
-            <li>Modelagem de Dados - Nível Avançado</li>
-            <li>SQL - Nível Avançado (Em andamento)</li>
-            <li>Power Query - Nível Avançado</li>
-            <li>Estatística para Análise de Dados</li>
-            <li>Python para Análise de Dados (Em andamento)</li>
-            <li>Mermaid - Desenvolvimento de Fluxogramas</li>
-        </ul>
-    </div>
+   <div class="section">
+       <h2>FORMAÇÃO COMPLEMENTAR</h2>
+       <ul>
+           <li>Linguagem DAX - Nivel Avançado</li>
+           <li>Modelagem de Dados - Nivel Avançado</li>
+           <li>SQL - Nivel Avançado (Em andamento)</li>
+           <li>Power Query - Nivel Avançado</li>
+           <li>Estatística para Analise de Dados</li>
+           <li>Python para Analise de Dados (Em andamento)</li>
+           <li>Mermaid - Desenvolvimento de Fluxogramas</li>
+       </ul>
+   </div>
 
-    <div class="section">
-        <h2>EXPERIÊNCIA PROFISSIONAL</h2>
-        <div class="job-title">AT Administrativo</div>
-        <div class="job-period">Mosaic Fertilizantes (Novembro/2024 - Atual)</div>
-        <div class="job-description">
-            <p>Responsável por operações na balança da empresa</p>
-            <p>Gerenciamento de carregamento e liberação de caminhões</p>
-        </div>
+   <div class="section">
+       <h2>EXPERIENCIA PROFISSIONAL</h2>
+       <div class="job-title">AT Administrativo</div>
+       <div class="job-period">Mosaic Fertilizantes (Novembro/2024 - Atual)</div>
+       <div class="job-description">
+           <p>Responsavel por operações na balanca da empresa</p>
+           <p>Gerenciamento de carregamento e liberação de caminhões</p>
+           <p>Controle e expedição de matéria-prima</p>
+       </div>
 
-        <div class="job-title">Jovem Aprendiz</div>
-        <div class="job-period">Mosaic Fertilizantes (Maio/2024 - Novembro/2024)</div>
-        <div class="job-description">
-            <p>Desenvolvimento de aplicativos para otimização de processos</p>
-            <p>Realização de análises de dados setoriais</p>
-            <p>Implementação de automações em processos burocráticos</p>
-        </div>
-    </div>
+       <div class="job-title">Jovem Aprendiz</div>
+       <div class="job-period">Mosaic Fertilizantes (Maio/2024 - Novembro/2024)</div>
+       <div class="job-description">
+           <p>Desenvolvimento de aplicativos para otimização de processos</p>
+           <p>Realizacao de analises de dados setoriais</p>
+           <p>Implementacao de automações em processos burocráticos</p>
+       </div>
+   </div>
 
-    <div class="section">
-        <h2>COMPETÊNCIAS TÉCNICAS</h2>
-        <div class="skills-grid">
-            <ul>
-                <li>Microsoft Excel - Nível Avançado</li>
-                <li>Power BI e Power Apps</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe Premiere Pro</li>
-                <li>Figma - Design de Dashboards</li>
-                <li>Apresentações dinâmicas em PowerPoint</li>
-            </ul>
-        </div>
-    </div>
+   <div class="section">
+       <h2>COMPETENCIAS TECNICAS</h2>
+       <div class="skills-grid">
+           <ul>
+               <li>Microsoft Excel - Nivel Avancado</li>
+               <li>Power BI e Power Apps</li>
+               <li>Adobe Photoshop</li>
+               <li>Adobe Premiere Pro</li>
+               <li>Figma - Design de Dashboards</li>
+               <li>Apresentacoes dinamicas em PowerPoint</li>
+               <li>Sistema SAP (Aplicacoes e Produtos de Sistema em Processamento de Dados)</li>
+           </ul>
+       </div>
+   </div>
 
-    <div class="section">
-        <h2>IDIOMAS</h2>
-        <ul>
-            <li>Inglês - Nível Avançado</li>
-            <li>Russo - Nível Básico</li>
-        </ul>
-    </div>
+   <div class="section">
+       <h2>IDIOMAS</h2>
+       <ul>
+           <li>Ingles - Nivel Avancado</li>
+           <li>Russo - Nivel Basico</li>
+       </ul>
+   </div>
 
-    <div class="section">
-        <h2>INFORMAÇÕES ADICIONAIS</h2>
-        <p>Profissional com forte capacidade de adaptação a novas tecnologias e comprometimento com aprendizado contínuo. Experiência prática em transformação de dados em insights acionáveis e automatização de processos para maior eficiência operacional.</p>
-    </div>
+   <div class="section">
+       <h2>INFORMACOES ADICIONAIS</h2>
+       <p>Profissional com forte capacidade de adaptacao a novas tecnologias e comprometimento com aprendizado continuo. Experiencia pratica em transformacao de dados em insights acionaveis e automatizacao de processos para maior eficiencia operacional.</p>
+   </div>
 </body>
 </html>
