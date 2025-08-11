@@ -174,118 +174,38 @@
             margin-bottom: 8px;
         }
 
-        /* Classe para agrupar elementos que devem ficar juntos */
-        .job-entry, .education-entry, .achievement-entry {
-            page-break-inside: avoid;
-        }
-
         @media print {
             body {
                 margin: 0;
                 padding: 0;
-                font-size: 10pt; /* Ligeiramente menor para economizar espaço */
             }
             
             .container {
                 box-shadow: none;
-                padding: 15px;
-                max-width: 100%;
+                padding: 20px;
             }
             
             .header {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-                page-break-after: avoid;
-                margin-bottom: 20px;
-                padding: 30px 20px;
-            }
-
-            .header h1 {
-                font-size: 24pt; /* Ligeiramente menor para economizar espaço */
             }
             
-            /* Controle geral de quebras de página */
-            .section {
-                page-break-inside: avoid;
-                margin-bottom: 20px;
-            }
-
-            /* Seção grande de conquistas - permite quebra interna mas mantém coesão */
-            .section:has(.achievement) {
-                page-break-inside: auto;
-            }
-
             .achievement {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-                page-break-inside: avoid;
-                margin: 15px 0;
             }
 
             .skills-category {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
-                page-break-inside: avoid;
-            }
-
-            .skills-grid {
-                page-break-inside: avoid;
             }
             
-            /* Evita quebras entre títulos e conteúdo relacionado */
-            h2 {
-                page-break-after: avoid;
-                margin-top: 20px;
-                margin-bottom: 15px;
-            }
-
-            h3 {
-                page-break-after: avoid;
-            }
-
-            .job-title, .education-title {
-                page-break-after: avoid;
-            }
-
-            /* Agrupa elementos relacionados */
-            .job-entry, .education-entry, .achievement-entry {
+            .section, .job-description, .skills-grid, .skills-category {
                 page-break-inside: avoid;
             }
 
-            .job-description {
-                page-break-inside: avoid;
-            }
-
-            /* Força uma nova página antes de seções específicas se necessário */
-            .section:nth-of-type(4) { /* Seção de Experiência Profissional */
-                page-break-before: auto;
-            }
-
-            /* Evita quebras desnecessárias em listas */
-            ul {
-                page-break-inside: avoid;
-            }
-
-            /* Evita linhas órfãs e viúvas */
-            p {
-                orphans: 2;
-                widows: 2;
-            }
-
-            /* Reduz espaçamentos para economizar espaço */
-            .section {
-                padding: 0 10px;
-            }
-        }
-
-        /* Media query específica para papel A4 */
-        @media print and (max-height: 29.7cm) {
-            .header {
-                padding: 25px 20px;
-            }
-            
-            .section {
-                margin-bottom: 18px;
+            h2, h3, .job-title, .education-title {
+                page-break-after: avoid;
             }
         }
     </style>
@@ -309,11 +229,11 @@
 
         <div class="section">
             <h2>CONQUISTAS E RECONHECIMENTOS</h2>
-            <div class="achievement achievement-entry">
+            <div class="achievement">
                 <div class="achievement-title">Reconhecimento BSC - Abril/2025</div>
                 <p>Homenageado no BSC mensal que reúne várias unidades da Mosaic do Brasil para reconhecer colaboradores com impacto positivo na empresa. Recebi destaque pela implementação de dashboards analíticos em Power BI que proporcionaram insights acionáveis, possibilitando a análise completa e avançada de Expedição, Recepção, Agendamentos, Cancelamentos e Planejado vs Realizado, facilitaram a tomada de decisão e otimizaram processos na área de Controladoria, resultando em maior eficiência operacional. Atualmente, o projeto está sendo expandido para outras unidades da Mosaic no Brasil, abrangendo maior território nacional após o sucesso inicial na unidade de Paranaguá.</p>
             </div>
-            <div class="achievement achievement-entry">
+            <div class="achievement">
                 <div class="achievement-title">Reconhecimento BSC - Julho/2025</div>
                 <p>Segundo reconhecimento no BSC mensal da Mosaic Fertilizantes por centralizar o processo de expedição para evitar problemas com Pricing na marcação e atraso na liberação dos caminhões. O projeto envolveu a conferência e validação dos produtos marcados para os caminhões, verificando se há produto disponível em estoque para a quantidade de caminhões marcados e se as marcações estão nos conformes, realizando ajustes manuais quando necessário ou encaminhando para o setor de Pricing. <strong>Resultado:</strong> Após a centralização do processo, desde maio de 2025 não teve mais nenhum caso de caminhões parados aguardando ajuste de Pricing para seguir com faturamento, melhorando significativamente o fluxo operacional da empresa.</p>
             </div>
@@ -321,11 +241,9 @@
 
         <div class="section">
             <h2>FORMAÇÃO ACADÊMICA</h2>
-            <div class="education-entry">
-                <div class="education-title">Inteligência de Mercado e Análise de Dados</div>
-                <div class="education-institution">Anhanguera</div>
-                <div class="education-period">Julho/2024 - Dezembro/2026 (Em andamento)</div>
-            </div>
+            <div class="education-title">Inteligência de Mercado e Análise de Dados</div>
+            <div class="education-institution">Anhanguera</div>
+            <div class="education-period">Julho/2024 - Dezembro/2026 (Em andamento)</div>
         </div>
 
         <div class="section">
@@ -343,29 +261,25 @@
 
         <div class="section">
             <h2>EXPERIÊNCIA PROFISSIONAL</h2>
-            <div class="job-entry">
-                <div class="job-title">Analista de Dados & Assistente Administrativo</div>
-                <div class="job-period">Mosaic Fertilizantes (Novembro/2024 - Atual)</div>
-                <div class="job-description">
-                    <p>Desenvolvimento e manutenção de dashboards para análise de indicadores operacionais</p>
-                    <p>Implementação de automatizações em processos burocráticos, otimizando o fluxo de trabalho</p>
-                    <p>Manutenção e otimização de processos ETL para garantir a qualidade e confiabilidade dos relatórios</p>
-                    <p>Monitoramento e operação do sistema integrado de pesagem rodoviária</p>
-                    <p>Desenvolvimento de soluções analíticas para suporte à tomada de decisão através de visualizações de dados interativas</p>
-                    <p>Responsável por assegurar a conformidade de fertilizantes formulados e não formulados para carregamento, incluindo a verificação de teores, matéria-prima, embalagens e óleos, realizando ajustes manuais quando necessário</p>
-                    <p>Coordenação das atividades de expedição e comunicação preventiva sobre possíveis faltas de insumos</p>
-                </div>
+            <div class="job-title">Analista de Dados & Assistente Administrativo</div>
+            <div class="job-period">Mosaic Fertilizantes (Novembro/2024 - Atual)</div>
+            <div class="job-description">
+                <p>Desenvolvimento e manutenção de dashboards para análise de indicadores operacionais</p>
+                <p>Implementação de automatizações em processos burocráticos, otimizando o fluxo de trabalho</p>
+                <p>Manutenção e otimização de processos ETL para garantir a qualidade e confiabilidade dos relatórios</p>
+                <p>Monitoramento e operação do sistema integrado de pesagem rodoviária</p>
+                <p>Desenvolvimento de soluções analíticas para suporte à tomada de decisão através de visualizações de dados interativas</p>
+                <p>Responsável por assegurar a conformidade de fertilizantes formulados e não formulados para carregamento, incluindo a verificação de teores, matéria-prima, embalagens e óleos, realizando ajustes manuais quando necessário</p>
+                <p>Coordenação das atividades de expedição e comunicação preventiva sobre possíveis faltas de insumos</p>
             </div>
 
-            <div class="job-entry">
-                <div class="job-title">Jovem Aprendiz</div>
-                <div class="job-period">Mosaic Fertilizantes (Maio/2024 - Novembro/2024)</div>
-                <div class="job-description">
-                    <p>Desenvolvimento de aplicações voltadas para otimização de processos operacionais</p>
-                    <p>Criação e implementação de dashboards interativos para visualização de dados</p>
-                    <p>Execução de análises setoriais para suporte à tomada de decisão</p>
-                    <p>Implementação de soluções de automatizações para processos burocráticos</p>
-                </div>
+            <div class="job-title">Jovem Aprendiz</div>
+            <div class="job-period">Mosaic Fertilizantes (Maio/2024 - Novembro/2024)</div>
+            <div class="job-description">
+                <p>Desenvolvimento de aplicações voltadas para otimização de processos operacionais</p>
+                <p>Criação e implementação de dashboards interativos para visualização de dados</p>
+                <p>Execução de análises setoriais para suporte à tomada de decisão</p>
+                <p>Implementação de soluções de automatizações para processos burocráticos</p>
             </div>
         </div>
 
@@ -404,6 +318,8 @@
                 <li>Russo - Nível Básico</li>
             </ul>
         </div>
+
+
     </div>
 </body>
 </html>
