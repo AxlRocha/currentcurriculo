@@ -174,132 +174,16 @@
             margin-bottom: 8px;
         }
 
-        /* Força quebras de página - compatível com conversores online */
-        .page-break {
-            page-break-before: always;
-            break-before: page;
-            height: 0;
-            margin: 0;
-            padding: 0;
-        }
-
-        .no-break {
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-
         /* Classe para agrupar elementos que devem ficar juntos */
         .job-entry, .education-entry, .achievement-entry {
             page-break-inside: avoid;
-            break-inside: avoid;
         }
 
-        /* CSS padrão (sem @media print) para compatibilidade com conversores */
-        body {
-            margin: 0;
-            padding: 0;
-            font-size: 10pt;
-        }
-        
-        .container {
-            box-shadow: none;
-            padding: 15px;
-            max-width: 100%;
-            min-height: 100vh;
-        }
-        
-        .header {
-            page-break-after: avoid;
-            break-after: avoid;
-            margin-bottom: 20px;
-            padding: 25px 20px;
-        }
-
-        .header h1 {
-            font-size: 22pt;
-        }
-        
-        /* Controle geral de quebras de página */
-        .section {
-            page-break-inside: avoid;
-            break-inside: avoid;
-            margin-bottom: 20px;
-        }
-
-        /* Seção de conquistas - permite quebra se muito grande */
-        .conquistas-section {
-            page-break-inside: auto;
-            break-inside: auto;
-        }
-
-        .achievement {
-            page-break-inside: avoid;
-            break-inside: avoid;
-            margin: 15px 0;
-        }
-
-        .skills-grid {
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-
-        .skills-category {
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-        
-        /* Evita quebras entre títulos e conteúdo relacionado */
-        h2 {
-            page-break-after: avoid;
-            break-after: avoid;
-            margin-top: 20px;
-            margin-bottom: 15px;
-        }
-
-        h3 {
-            page-break-after: avoid;
-            break-after: avoid;
-        }
-
-        .job-title, .education-title {
-            page-break-after: avoid;
-            break-after: avoid;
-        }
-
-        /* Agrupa elementos relacionados */
-        .job-entry, .education-entry, .achievement-entry {
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-
-        .job-description {
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-
-        /* Evita quebras desnecessárias em listas */
-        ul {
-            page-break-inside: avoid;
-            break-inside: avoid;
-        }
-
-        /* Evita linhas órfãs e viúvas */
-        p {
-            orphans: 2;
-            widows: 2;
-        }
-
-        /* Reduz espaçamentos para economizar espaço */
-        .section {
-            padding: 0 10px;
-        }
-
-        /* Mantém @media print para navegadores que suportam */
         @media print {
             body {
                 margin: 0;
                 padding: 0;
-                font-size: 10pt;
+                font-size: 10pt; /* Ligeiramente menor para economizar espaço */
             }
             
             .container {
@@ -313,26 +197,95 @@
                 print-color-adjust: exact;
                 page-break-after: avoid;
                 margin-bottom: 20px;
-                padding: 25px 20px;
+                padding: 30px 20px;
             }
 
             .header h1 {
-                font-size: 22pt;
+                font-size: 24pt; /* Ligeiramente menor para economizar espaço */
             }
             
+            /* Controle geral de quebras de página */
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+
+            /* Seção grande de conquistas - permite quebra interna mas mantém coesão */
+            .section:has(.achievement) {
+                page-break-inside: auto;
+            }
+
             .achievement {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                page-break-inside: avoid;
+                margin: 15px 0;
             }
 
             .skills-category {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+                page-break-inside: avoid;
             }
 
-            /* Força quebra específica antes da experiência profissional se necessário */
-            .experiencia-section {
+            .skills-grid {
+                page-break-inside: avoid;
+            }
+            
+            /* Evita quebras entre títulos e conteúdo relacionado */
+            h2 {
+                page-break-after: avoid;
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                page-break-after: avoid;
+            }
+
+            .job-title, .education-title {
+                page-break-after: avoid;
+            }
+
+            /* Agrupa elementos relacionados */
+            .job-entry, .education-entry, .achievement-entry {
+                page-break-inside: avoid;
+            }
+
+            .job-description {
+                page-break-inside: avoid;
+            }
+
+            /* Força uma nova página antes de seções específicas se necessário */
+            .section:nth-of-type(4) { /* Seção de Experiência Profissional */
                 page-break-before: auto;
+            }
+
+            /* Evita quebras desnecessárias em listas */
+            ul {
+                page-break-inside: avoid;
+            }
+
+            /* Evita linhas órfãs e viúvas */
+            p {
+                orphans: 2;
+                widows: 2;
+            }
+
+            /* Reduz espaçamentos para economizar espaço */
+            .section {
+                padding: 0 10px;
+            }
+        }
+
+        /* Media query específica para papel A4 */
+        @media print and (max-height: 29.7cm) {
+            .header {
+                padding: 25px 20px;
+            }
+            
+            .section {
+                margin-bottom: 18px;
             }
         }
     </style>
@@ -354,7 +307,7 @@
             <p>Analista de Dados em Transição de Carreira | Power BI, SQL, DAX, ETL, com foco em transformação de dados em insights estratégicos e automatização de processos.</p>
         </div>
 
-        <div class="section conquistas-section">
+        <div class="section">
             <h2>CONQUISTAS E RECONHECIMENTOS</h2>
             <div class="achievement achievement-entry">
                 <div class="achievement-title">Reconhecimento BSC - Abril/2025</div>
@@ -365,9 +318,6 @@
                 <p>Segundo reconhecimento no BSC mensal da Mosaic Fertilizantes por centralizar o processo de expedição para evitar problemas com Pricing na marcação e atraso na liberação dos caminhões. O projeto envolveu a conferência e validação dos produtos marcados para os caminhões, verificando se há produto disponível em estoque para a quantidade de caminhões marcados e se as marcações estão nos conformes, realizando ajustes manuais quando necessário ou encaminhando para o setor de Pricing. <strong>Resultado:</strong> Após a centralização do processo, desde maio de 2025 não teve mais nenhum caso de caminhões parados aguardando ajuste de Pricing para seguir com faturamento, melhorando significativamente o fluxo operacional da empresa.</p>
             </div>
         </div>
-
-        <!-- Força quebra de página aqui se necessário -->
-        <div class="page-break"></div>
 
         <div class="section">
             <h2>FORMAÇÃO ACADÊMICA</h2>
@@ -391,7 +341,7 @@
             </ul>
         </div>
 
-        <div class="section experiencia-section">
+        <div class="section">
             <h2>EXPERIÊNCIA PROFISSIONAL</h2>
             <div class="job-entry">
                 <div class="job-title">Analista de Dados & Assistente Administrativo</div>
