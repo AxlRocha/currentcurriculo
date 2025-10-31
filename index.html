@@ -3,323 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axl Jhuan Moreira da Rocha</title>
+    <title>Axl Jhuan Moreira da Rocha - Currículo</title>
     <style>
-        :root {
-            --primary-color: #1a4f8b;
-            --secondary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #2c3e50;
-            --light-gray: #f5f6fa;
-            --border-color: #e1e8ed;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 11pt;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
+            line-height: 1.4;
+            color: #000;
             background: #fff;
-            color: var(--text-color);
-        }
-        
-        .container {
+            padding: 15mm 20mm;
             max-width: 210mm;
             margin: 0 auto;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
         }
-        
+
         .header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 40px 30px;
-            border-radius: 8px 8px 0 0;
-            margin-bottom: 30px;
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #000;
         }
 
         .header h1 {
-            font-size: 28pt;
-            margin: 0;
+            font-size: 18pt;
+            font-weight: bold;
+            text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 600;
+            margin-bottom: 8px;
         }
 
         .contact-info {
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 20px;
-            font-size: 11pt;
+            font-size: 10pt;
+            line-height: 1.5;
         }
-        
+
         h2 {
-            font-size: 16pt;
-            color: var(--primary-color);
-            margin-top: 30px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--accent-color);
-            font-weight: 600;
-        }
-        
-        h3 {
             font-size: 12pt;
-            color: var(--secondary-color);
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: 600;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
         }
 
         .section {
-            margin-bottom: 30px;
-            padding: 0 15px;
-        }
-        
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 10px;
-        }
-        
-        li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
+            margin-bottom: 12px;
         }
 
-        li:before {
-            content: "▪";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
-        
-        .job-title, .education-title {
-            font-weight: 600;
-            color: var(--secondary-color);
-            font-size: 13pt;
-            margin-bottom: 5px;
-        }
-        
-        .job-period, .education-period {
-            font-style: italic;
-            color: var(--accent-color);
+        .job-entry, .education-entry {
             margin-bottom: 10px;
+        }
+
+        .job-title, .education-title {
+            font-weight: bold;
             font-size: 11pt;
         }
-        
-        .job-description {
-            margin-bottom: 25px;
-            padding-left: 15px;
+
+        .job-company, .education-institution {
+            font-style: italic;
+            margin-top: 2px;
         }
 
-        .job-description p {
-            margin: 8px 0;
-            position: relative;
-            padding-left: 20px;
+        .job-period, .education-period {
+            font-size: 10pt;
+            margin-top: 2px;
+            margin-bottom: 5px;
         }
 
-        .job-description p:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
+        ul {
+            margin-left: 20px;
+            margin-top: 5px;
         }
 
-        .skills-grid {
+        li {
+            margin-bottom: 3px;
+            text-align: justify;
+        }
+
+        .skills-columns {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .skills-category {
-            background-color: #fafbfc;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 3px solid var(--accent-color);
-        }
-
-        .skills-category ul {
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             margin-top: 8px;
         }
 
-        .education-institution {
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-            font-weight: 500;
+        .achievement-box {
+            margin-bottom: 8px;
+            padding-left: 15px;
         }
 
-        .info-adicional {
-            background-color: var(--light-gray);
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        
-        .achievement {
-            background-color: #f0f7ff;
-            border-left: 4px solid var(--accent-color);
-            padding: 15px;
-            border-radius: 0 8px 8px 0;
-            margin: 20px 0;
-        }
-        
         .achievement-title {
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 10.5pt;
+        }
+
+        .achievement-text {
+            text-align: justify;
+            margin-top: 3px;
+            font-size: 10.5pt;
         }
 
         @media print {
             body {
-                margin: 0;
-                padding: 0;
+                padding: 10mm 15mm;
             }
             
-            .container {
-                box-shadow: none;
-                padding: 20px;
-            }
-            
-            .header {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            
-            .achievement {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .skills-category {
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-            
-            .section, .job-description, .skills-grid, .skills-category {
+            .section {
                 page-break-inside: avoid;
-            }
-
-            h2, h3, .job-title, .education-title {
-                page-break-after: avoid;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>AXL JHUAN MOREIRA DA ROCHA</h1>
-            <div class="contact-info">
-                <span>22 anos</span>
-                <span>Paranaguá - PR</span>
-                <span>(41) 98501-6093</span>
-                <span>axljhuan@gmail.com</span>
-            </div>
+    <div class="header">
+        <h1>Axl Jhuan Moreira da Rocha</h1>
+        <div class="contact-info">
+            23 anos | Paranaguá - PR<br>
+            (41) 98501-6093 | axljhuan@gmail.com
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Objetivo Profissional</h2>
+        <p>Analista de Dados especializado em Power BI, SQL, DAX e ETL, com foco em transformação de dados em insights estratégicos e automatização de processos.</p>
+    </div>
+
+    <div class="section">
+        <h2>Experiência Profissional</h2>
+        
+        <div class="job-entry">
+            <div class="job-title">Analista de Dados & Assistente Administrativo</div>
+            <div class="job-company">Mosaic Fertilizantes</div>
+            <div class="job-period">Novembro/2024 - Atual</div>
+            <ul>
+                <li>Desenvolvimento e manutenção de dashboards em Power BI para análise de indicadores operacionais de expedição, recepção, agendamentos e planejamento.</li>
+                <li>Implementação de automatizações em processos burocráticos, otimizando fluxos de trabalho.</li>
+                <li>Manutenção e otimização de processos ETL com Power Query para garantir qualidade e confiabilidade dos relatórios.</li>
+                <li>Centralização do processo de expedição para conferência e validação de produtos, verificando disponibilidade de estoque e conformidade de marcações, eliminando casos de caminhões parados por ajustes de Pricing desde maio/2025.</li>
+                <li>Responsável pela conformidade de fertilizantes formulados e não formulados para carregamento, incluindo verificação de teores, matéria-prima, embalagens e óleos.</li>
+                <li>Monitoramento e operação do sistema integrado de pesagem rodoviária e coordenação de atividades de expedição.</li>
+            </ul>
         </div>
 
-        <div class="section">
-            <h2>OBJETIVO PROFISSIONAL</h2>
-            <p>Analista de Dados em Transição de Carreira | Power BI, SQL, DAX, ETL, com foco em transformação de dados em insights estratégicos e automatização de processos.</p>
+        <div class="job-entry">
+            <div class="job-title">Jovem Aprendiz</div>
+            <div class="job-company">Mosaic Fertilizantes</div>
+            <div class="job-period">Maio/2024 - Novembro/2024</div>
+            <ul>
+                <li>Desenvolvimento de aplicações voltadas para otimização de processos operacionais.</li>
+                <li>Criação e implementação de dashboards interativos para visualização de dados.</li>
+                <li>Execução de análises setoriais para suporte à tomada de decisão.</li>
+                <li>Implementação de soluções de automatização para processos burocráticos.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Conquistas e Reconhecimentos</h2>
+        
+        <div class="achievement-box">
+            <div class="achievement-title">Reconhecimento BSC - Abril/2025</div>
+            <div class="achievement-text">Homenageado no BSC mensal por implementação de dashboards analíticos em Power BI que proporcionaram análise completa de Expedição, Recepção, Agendamentos, Cancelamentos e Planejado vs Realizado. O projeto está sendo expandido para outras unidades da Mosaic no Brasil após sucesso na unidade de Paranaguá.</div>
         </div>
 
-        <div class="section">
-            <h2>CONQUISTAS E RECONHECIMENTOS</h2>
-            <div class="achievement">
-                <div class="achievement-title">Reconhecimento BSC - Abril/2025</div>
-                <p>Homenageado no BSC mensal que reúne várias unidades da Mosaic do Brasil para reconhecer colaboradores com impacto positivo na empresa. Recebi destaque pela implementação de dashboards analíticos em Power BI que proporcionaram insights acionáveis, possibilitando a análise completa e avançada de Expedição, Recepção, Agendamentos, Cancelamentos e Planejado vs Realizado, facilitaram a tomada de decisão e otimizaram processos na área de Controladoria, resultando em maior eficiência operacional. Atualmente, o projeto está sendo expandido para outras unidades da Mosaic no Brasil, abrangendo maior território nacional após o sucesso inicial na unidade de Paranaguá.</p>
-            </div>
-            <div class="achievement">
-                <div class="achievement-title">Reconhecimento BSC - Julho/2025</div>
-                <p>Segundo reconhecimento no BSC mensal da Mosaic Fertilizantes por centralizar o processo de expedição para evitar problemas com Pricing na marcação e atraso na liberação dos caminhões. O projeto envolveu a conferência e validação dos produtos marcados para os caminhões, verificando se há produto disponível em estoque para a quantidade de caminhões marcados e se as marcações estão nos conformes, realizando ajustes manuais quando necessário ou encaminhando para o setor de Pricing. <strong>Resultado:</strong> Após a centralização do processo, desde maio de 2025 não teve mais nenhum caso de caminhões parados aguardando ajuste de Pricing para seguir com faturamento, melhorando significativamente o fluxo operacional da empresa.</p>
-            </div>
+        <div class="achievement-box">
+            <div class="achievement-title">Reconhecimento BSC - Julho/2025</div>
+            <div class="achievement-text">Segundo reconhecimento no BSC mensal por centralizar o processo de expedição, eliminando problemas com Pricing na marcação e atrasos na liberação dos caminhões. Resultado: desde maio/2025 não houve mais casos de caminhões parados aguardando ajuste de Pricing.</div>
         </div>
+    </div>
 
-        <div class="section">
-            <h2>FORMAÇÃO ACADÊMICA</h2>
+    <div class="section">
+        <h2>Formação Acadêmica</h2>
+        
+        <div class="education-entry">
             <div class="education-title">Inteligência de Mercado e Análise de Dados</div>
             <div class="education-institution">Anhanguera</div>
             <div class="education-period">Julho/2024 - Dezembro/2026 (Em andamento)</div>
         </div>
+    </div>
 
-        <div class="section">
-            <h2>FORMAÇÃO COMPLEMENTAR</h2>
-            <ul>
-                <li>Linguagem DAX - Nível Avançado</li>
-                <li>Modelagem de Dados - Nível Avançado</li>
-                <li>SQL - Nível Avançado (Em andamento)</li>
-                <li>Power Query - Nível Avançado</li>
-                <li>Estatística para Análise de Dados</li>
-                <li>Python para Análise de Dados (Em andamento)</li>
-                <li>Mermaid - Desenvolvimento de Fluxogramas</li>
-            </ul>
-        </div>
+    <div class="section">
+        <h2>Formação Complementar</h2>
+        <ul>
+            <li>Linguagem DAX - Nível Avançado</li>
+            <li>Modelagem de Dados - Nível Avançado</li>
+            <li>SQL - Nível Avançado (Em andamento)</li>
+            <li>Power Query - Nível Avançado</li>
+            <li>Estatística para Análise de Dados</li>
+            <li>Python para Análise de Dados (Em andamento)</li>
+            <li>Mermaid - Desenvolvimento de Fluxogramas</li>
+        </ul>
+    </div>
 
-        <div class="section">
-            <h2>EXPERIÊNCIA PROFISSIONAL</h2>
-            <div class="job-title">Analista de Dados & Assistente Administrativo</div>
-            <div class="job-period">Mosaic Fertilizantes (Novembro/2024 - Atual)</div>
-            <div class="job-description">
-                <p>Desenvolvimento e manutenção de dashboards para análise de indicadores operacionais</p>
-                <p>Implementação de automatizações em processos burocráticos, otimizando o fluxo de trabalho</p>
-                <p>Manutenção e otimização de processos ETL para garantir a qualidade e confiabilidade dos relatórios</p>
-                <p>Monitoramento e operação do sistema integrado de pesagem rodoviária</p>
-                <p>Desenvolvimento de soluções analíticas para suporte à tomada de decisão através de visualizações de dados interativas</p>
-                <p>Responsável por assegurar a conformidade de fertilizantes formulados e não formulados para carregamento, incluindo a verificação de teores, matéria-prima, embalagens e óleos, realizando ajustes manuais quando necessário</p>
-                <p>Coordenação das atividades de expedição e comunicação preventiva sobre possíveis faltas de insumos</p>
+    <div class="section">
+        <h2>Competências Técnicas</h2>
+        <div class="skills-columns">
+            <div>
+                <strong>Análise e Business Intelligence:</strong>
+                <ul>
+                    <li>Power BI e Power Apps</li>
+                    <li>Power Query e ETL</li>
+                    <li>DAX - Nível Avançado</li>
+                    <li>SQL - Nível Avançado</li>
+                    <li>Microsoft Excel - Nível Avançado</li>
+                    <li>Modelagem de Dados</li>
+                </ul>
             </div>
-
-            <div class="job-title">Jovem Aprendiz</div>
-            <div class="job-period">Mosaic Fertilizantes (Maio/2024 - Novembro/2024)</div>
-            <div class="job-description">
-                <p>Desenvolvimento de aplicações voltadas para otimização de processos operacionais</p>
-                <p>Criação e implementação de dashboards interativos para visualização de dados</p>
-                <p>Execução de análises setoriais para suporte à tomada de decisão</p>
-                <p>Implementação de soluções de automatizações para processos burocráticos</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>COMPETÊNCIAS TÉCNICAS</h2>
-            <div class="skills-grid">
-                <div class="skills-category">
-                    <h3>Análise e Business Intelligence</h3>
-                    <ul>
-                        <li>Power BI e Power Apps</li>
-                        <li>Power Query e ETL</li>
-                        <li>DAX - Nível Avançado</li>
-                        <li>Microsoft Excel - Nível Avançado</li>
-                        <li>SQL - Nível Avançado</li>
-                        <li>Modelagem de Dados</li>
-                    </ul>
-                </div>
-                <div class="skills-category">
-                    <h3>Ferramentas e Design</h3>
-                    <ul>
-                        <li>Sistema SAP</li>
-                        <li>Figma - Design de Dashboards</li>
-                        <li>Adobe Photoshop</li>
-                        <li>Adobe Premiere Pro</li>
-                        <li>PowerPoint Avançado</li>
-                        <li>Python (Em andamento)</li>
-                    </ul>
-                </div>
+            <div>
+                <strong>Ferramentas e Design:</strong>
+                <ul>
+                    <li>Sistema SAP</li>
+                    <li>Figma - Design de Dashboards</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe Premiere Pro</li>
+                    <li>PowerPoint Avançado</li>
+                    <li>Python (Em andamento)</li>
+                </ul>
             </div>
         </div>
+    </div>
 
-        <div class="section">
-            <h2>IDIOMAS</h2>
-            <ul>
-                <li>Inglês - Nível Avançado</li>
-                <li>Russo - Nível Básico</li>
-            </ul>
-        </div>
-
-
+    <div class="section">
+        <h2>Idiomas</h2>
+        <ul>
+            <li>Inglês - Nível Avançado</li>
+            <li>Russo - Nível Básico</li>
+        </ul>
     </div>
 </body>
 </html>
